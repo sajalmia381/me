@@ -1,0 +1,22 @@
+[
+    {
+        "name": "facebook",
+        "icon": "FaFacebookSquare",
+        "link": "https://www.facebook.com/sajalmia381"
+    },
+    {
+        "name": "linkedin",
+        "icon": "FaLinkedin",
+        "link": "https://www.linkedin.com/in/sajalmia381"
+    },
+    {
+        "name": "github",
+        "icon": "FaGithubSquare",
+        "link": "https://github.com/sajalmia381"
+    },
+    {
+        "name": "themeforest",
+        "icon": "FaEnvira",
+        "link": "https://themeforest.net/user/techincent"
+    }
+]

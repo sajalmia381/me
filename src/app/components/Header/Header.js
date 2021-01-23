@@ -1,30 +1,66 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useLayoutEffect } from 'react';
+import Scrollspy from 'react-scrollspy';
+import clsx from 'clsx';
 
 function Header() {
+	const [isScroll, setIsScroll] = useState(false);
+	const [navbarMobileExpend, setNavbarmobileExpend] = useState(false);
+	const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+	useLayoutEffect(() => {
+		function updateSize() {
+			setViewportWidth([window.innerWidth]);
+		}
+		window.addEventListener('resize', updateSize);
+		updateSize();
+		return () => window.removeEventListener('resize', updateSize);
+	}, []);
+	window.addEventListener('scroll', e => {
+		const offset = window.scrollY;
+		offset > 0 ? setIsScroll(true) : setIsScroll(false);
+	});
+	const isNavbarCollapseble = viewportWidth <= 768;
+
 	return (
-		<nav className="navbar navbar-expand-md navbar-light bg-transpert fixed-top">
-			<div className="container-fluid">
-				<a className="navbar-brand" href="/">
+		<nav
+			className={clsx(
+				'navbar',
+				'navbar-expand-md',
+				'navbar-dark',
+				isScroll ? 'bg-dark' : 'bg-transpert',
+				'fixed-top'
+			)}
+		>
+			<div className="container">
+				<a className="navbar-brand fw-bolder" href="/">
 					Sajal
 				</a>
 				<button
-					className="navbar-toggler"
+					className={clsx('navbar-toggler', isNavbarCollapseble & navbarMobileExpend && 'collapsed')}
 					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
+					aria-expanded={isNavbarCollapseble & navbarMobileExpend}
+					onClick={e => setNavbarmobileExpend(navbarMobileExpend ? false : true)}
 				>
 					<span className="navbar-toggler-icon" />
 				</button>
-				<div className="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
-					<ul className="navbar-nav mb-2 mb-md-0">
+				<div
+					className={clsx(
+						'collapse',
+						'navbar-collapse',
+						'justify-content-md-end',
+						isNavbarCollapseble && 'bg-dark p-3',
+						isNavbarCollapseble & navbarMobileExpend && 'show'
+					)}
+				>
+					<Scrollspy
+						items={['#id_header', '#id_about', '#id_service', '#id_work', '#id_blog', '#id_contact']}
+						currentClassName="is-current"
+						className="navbar-nav mb-2 mb-md-0"
+					>
 						<li className="nav-item">
-							<Link className="nav-link active" aria-current="page" to="/">
+							<a className="nav-link active" aria-current="page" href="#id_main">
 								Home
-							</Link>
+							</a>
 						</li>
 						<li className="nav-item">
 							<a className="nav-link" href="#id_about">
@@ -55,7 +91,7 @@ function Header() {
 								Contact
 							</a>
 						</li>
-					</ul>
+					</Scrollspy>
 				</div>
 			</div>
 		</nav>
