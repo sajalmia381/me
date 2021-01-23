@@ -1,0 +1,2 @@
+(this.webpackJsonpresume=this.webpackJsonpresume||[]).push([[3],{99:function(e,s,t){"use strict";t.r(s);var c=t(1),n=(t(2),t(48));s.default=function(){return Object(c.jsxs)("div",{className:"d-flex flex-column align-items-center justify-content-center",style:{height:"100vh"},children:[Object(c.jsx)("h3",{children:"THis is 404"}),Object(c.jsx)(n.a,{to:"/",children:"Home"})]})}}}]);
+//# sourceMappingURL=3.ac8b296b.chunk.js.map
