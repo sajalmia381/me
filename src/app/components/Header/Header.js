@@ -53,7 +53,7 @@ function Header() {
 					)}
 				>
 					<Scrollspy
-						items={['#id_header', '#id_about', '#id_service', '#id_work', '#id_blog', '#id_contact']}
+						items={['#id_header', '#id_about', '#id_portfolio', '#id_blog', '#id_contact']}
 						currentClassName="is-current"
 						className="navbar-nav mb-2 mb-md-0"
 					>
@@ -69,14 +69,8 @@ function Header() {
 						</li>
 
 						<li className="nav-item">
-							<a className="nav-link" href="#id_service">
-								Service
-							</a>
-						</li>
-
-						<li className="nav-item">
-							<a className="nav-link" href="#id_work">
-								Work
+							<a className="nav-link" href="#id_portfolio">
+								Portfolio
 							</a>
 						</li>
 

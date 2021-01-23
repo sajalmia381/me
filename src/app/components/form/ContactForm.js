@@ -4,72 +4,43 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 const ContactForm = props => {
 	return (
 		<Form>
-			<FormGroup>
-				<Label for="exampleEmail">Email</Label>
-				<Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+			<div className="row">
+				<div className="col-sm-6">
+					<FormGroup>
+						<Label for="name">Full Name</Label>
+						<Input type="text" name="name" id="name" />
+					</FormGroup>
+				</div>
+				<div className="col-sm-6">
+					<FormGroup>
+						<Label for="subject">Subject</Label>
+						<Input type="text" name="subject" id="subject" />
+					</FormGroup>
+				</div>
+			</div>
+			<div className="row mt-4">
+				<div className="col-sm-6">
+					<FormGroup>
+						<Label for="email">Email</Label>
+						<Input type="email" name="email" id="email" />
+					</FormGroup>
+				</div>
+				<div className="col-sm-6">
+					<FormGroup>
+						<Label for="number">Number</Label>
+						<Input type="number" name="number" id="number" />
+					</FormGroup>
+				</div>
+			</div>
+			<FormGroup className="mt-4">
+				<Input type="textarea" name="text" id="description" />
 			</FormGroup>
-			<FormGroup>
-				<Label for="examplePassword">Password</Label>
-				<Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-			</FormGroup>
-			<FormGroup>
-				<Label for="exampleSelect">Select</Label>
-				<Input type="select" name="select" id="exampleSelect">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</Input>
-			</FormGroup>
-			<FormGroup>
-				<Label for="exampleSelectMulti">Select Multiple</Label>
-				<Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</Input>
-			</FormGroup>
-			<FormGroup>
-				<Label for="exampleText">Text Area</Label>
-				<Input type="textarea" name="text" id="exampleText" />
-			</FormGroup>
-			<FormGroup>
-				<Label for="exampleFile">File</Label>
-				<Input type="file" name="file" id="exampleFile" />
-				<FormText color="muted">
-					This is some placeholder block-level help text for the above input. It's a bit lighter and easily
-					wraps to a new line.
-				</FormText>
-			</FormGroup>
-			<FormGroup tag="fieldset">
-				<legend>Radio Buttons</legend>
-				<FormGroup check>
-					<Label check>
-						<Input type="radio" name="radio1" /> Option one is this and that—be sure to include why it's
-						great
-					</Label>
-				</FormGroup>
-				<FormGroup check>
-					<Label check>
-						<Input type="radio" name="radio1" /> Option two can be something else and selecting it will
-						deselect option one
-					</Label>
-				</FormGroup>
-				<FormGroup check disabled>
-					<Label check>
-						<Input type="radio" name="radio1" disabled /> Option three is disabled
-					</Label>
-				</FormGroup>
-			</FormGroup>
-			<FormGroup check>
+			<FormGroup className="mt-4" check>
 				<Label check>
-					<Input type="checkbox" /> Check me out
+					<Input type="checkbox" /> I'm not Robot
 				</Label>
 			</FormGroup>
-			<Button>Submit</Button>
+			<Button className="mt-4 btn-info px-5">Submit</Button>
 		</Form>
 	);
 };

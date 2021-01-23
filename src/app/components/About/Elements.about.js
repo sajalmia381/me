@@ -54,6 +54,13 @@ export const Paragraph = styled.p`
 `;
 
 export const SocialIconLink = styled.a`
-	font-size: 0.9rem;
-	margin-left: 5px;
+	margin-right: 15px;
+	svg {
+		color: #333;
+		transition: all 0.3s linear;
+		&:hover {
+			color: palevioletred;
+			transform: scale(1.5);
+		}
+	}
 `;

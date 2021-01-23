@@ -12,7 +12,7 @@ export const Section = styled.section`
 		left: 0;
 		height: 100%;
 		width: 50%;
-		background: url('../images/sajal.jpg');
+		/* background: url('../images/sajal.jpg'); */
 	}
 `;
 

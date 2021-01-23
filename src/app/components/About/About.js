@@ -65,8 +65,7 @@ const About = () => {
 							{socialData.map((item, index) => (
 								<SocialIconLink key={index} href={item.link} target="_blank">
 									{icons.map(
-										_item =>
-											_item.name === item.icon && <_item color="#333" size="1.5rem" key={index} />
+										_item => _item.name === item.icon && <_item size="1.5rem" key={index} />
 									)}
 								</SocialIconLink>
 							))}
