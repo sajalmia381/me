@@ -32,8 +32,8 @@ function Header() {
 			)}
 		>
 			<div className="container">
-				<a className="navbar-brand fw-bolder" href="/">
-					Sajal
+				<a className="navbar-brand fw-bold" href="/">
+					SajalMia
 				</a>
 				<button
 					className={clsx('navbar-toggler', isNavbarCollapseble & navbarMobileExpend && 'collapsed')}
@@ -54,11 +54,11 @@ function Header() {
 				>
 					<Scrollspy
 						items={['#id_header', '#id_about', '#id_portfolio', '#id_blog', '#id_contact']}
-						currentClassName="is-current"
+						currentClassName="active"
 						className="navbar-nav mb-2 mb-md-0"
 					>
 						<li className="nav-item">
-							<a className="nav-link active" aria-current="page" href="#id_main">
+							<a className="nav-link" aria-current="page" href="#id_main">
 								Home
 							</a>
 						</li>

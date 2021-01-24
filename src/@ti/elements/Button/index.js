@@ -12,8 +12,8 @@ export const Button = styled.button`
                     background: transparent;
                 }
             `;
-		} else {
-			return `
+		}
+		return `
                 color: palevioletred;
                 background: transparent;
                 border-color: palevioletred;
@@ -22,14 +22,12 @@ export const Button = styled.button`
                     background: palevioletred;
                 }
             `;
-		}
 	}};
 	padding: ${({ size }) => {
-		if (size == 'lg') {
+		if (size === 'lg') {
 			return '3rem';
-		} else {
-			return '0.5rem 1.5rem';
 		}
+		return '0.5rem 1.5rem';
 	}};
 	border: 1px solid;
 	font-size: 1rem;
@@ -50,24 +48,22 @@ export const Link = styled.a`
                     background: transparent;
                 }
             `;
-		} else {
-			return `
-                color: palevioletred;
-                background: transparent;
-                border-color: palevioletred;
-                &:hover {
-                    color: #fff;
-                    background: palevioletred;
-                }
-            `;
 		}
+		return `
+			color: palevioletred;
+			background: transparent;
+			border-color: palevioletred;
+			&:hover {
+				color: #fff;
+				background: palevioletred;
+			}
+		`;
 	}};
 	padding: ${({ size }) => {
-		if (size == 'lg') {
+		if (size === 'lg') {
 			return '3rem';
-		} else {
-			return '0.5rem 1.5rem';
 		}
+		return '0.5rem 1.5rem';
 	}};
 	border: 1px solid;
 	font-size: 1rem;

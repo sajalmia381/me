@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Section } from '@ti/elements/Section';
 import { Link } from '@ti/elements/Button';
+import axios from 'axios';
 import { SectionTitle, Article, ArticleDetails, Thumbnail, TitleLink, Title, PublishData } from './Elements.blog';
 
 const RenderBlog = ({ item }) => {
@@ -10,7 +11,7 @@ const RenderBlog = ({ item }) => {
 				<img src={item.feature_images} alt="Blog" />
 			</Thumbnail>
 			<ArticleDetails>
-				<PublishData className="mb-3">{item.date}</PublishData>
+				<PublishData className="mb-2">{item.date}</PublishData>
 				<TitleLink href={item.link}>
 					<Title>{item.title.rendered}</Title>
 				</TitleLink>
@@ -23,10 +24,10 @@ const Blog = () => {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		fetch('https://techincent.com/wp-json/wp/v2/posts')
-			.then(response => response.json())
-			.then(data => {
-				setPosts(data.slice(0, 6));
+		axios
+			.get('https://techincent.com/wp-json/wp/v2/posts')
+			.then(response => {
+				setPosts(response.data.slice(0, 6));
 			})
 			.catch(res => {
 				console.log(res);
@@ -38,7 +39,7 @@ const Blog = () => {
 			<div className="container">
 				<div className="row">
 					<div className="col-12">
-						<div className="d-flex align-items-center justify-content-between pb-4">
+						<div className="d-flex align-items-center justify-content-between">
 							<SectionTitle>Latest Blogs</SectionTitle>
 							<Link primary target="_blank" href="https://techincent.com/">
 								View All
@@ -46,12 +47,12 @@ const Blog = () => {
 						</div>
 					</div>
 				</div>
-				<div className="row mt-n3">
+				<div className="row mt-n5">
 					{posts.length <= 0 ? (
 						<div>No Item Found</div>
 					) : (
 						posts.map((item, index) => (
-							<div className="col-md-4 mt-3" key={index}>
+							<div className="col-md-4 mt-5" key={index}>
 								<RenderBlog item={item} />
 							</div>
 						))

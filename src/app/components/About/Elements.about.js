@@ -7,6 +7,11 @@ export const Section = styled.section`
 
 export const ImageWrap = styled.div`
 	position: relative;
+	img {
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 `;
 
 export const ImageBadge = styled.div`
@@ -20,12 +25,12 @@ export const ImageBadge = styled.div`
 		z-index: 5;
 	}
 	.__position {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		font-style: italic;
 		font-weight: 400;
 	}
 	.__name {
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 		font-weight: 700;
 	}
 	svg {
@@ -43,14 +48,42 @@ export const ImageBadge = styled.div`
 		fill: #fff;
 		stroke: #fff;
 	}
+	@media (min-width: 576px) {
+		.__name {
+			font-size: 1.5rem;
+		}
+		.__position {
+			font-size: 1.1rem;
+		}
+	}
+	@media (min-width: 992px) {
+		.__position {
+			font-size: 1.2rem;
+		}
+		.__name {
+			font-size: 1.75rem;
+		}
+	}
 `;
 
-export const Heading = styled.h1`
-	font-size: 2.5rem;
+export const Heading = styled.h2`
+	font-size: 1.5rem;
+	@media (min-width: 576px) {
+		font-size: 1.75rem;
+	}
+	@media (min-width: 992px) {
+		font-size: 2.5rem;
+	}
 `;
 
 export const Paragraph = styled.p`
-	font-size: ${props => (props.fontSize ? props.fontSize : '1rem')};
+	font-size: 1rem;
+	@media (min-width: 576px) {
+		font-size: 1.1rem;
+	}
+	@media (min-width: 992px) {
+		font-size: 1.2rem;
+	}
 `;
 
 export const SocialIconLink = styled.a`

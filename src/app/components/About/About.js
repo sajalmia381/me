@@ -4,15 +4,16 @@ import { Section, ImageWrap, ImageBadge, Heading, Paragraph, SocialIconLink } fr
 import socialData from 'fixtures/socialLinkList';
 import { FaFacebookSquare, FaLinkedin, FaGithubSquare, FaEnvira } from 'react-icons/fa';
 const icons = [FaFacebookSquare, FaLinkedin, FaGithubSquare, FaEnvira];
+import aboutImage from '@assets/images/about-me.jpg';
 
 const About = () => {
 	return (
 		<Section id="id_about" background="linear-gradient(90deg,#fbf0f1 25%,#f6edfd 100%)">
 			<div className="container">
 				<div className="row align-items-center">
-					<div className="col-md-6 text-center er-md-4">
+					<div className="col-md-6 text-center">
 						<ImageWrap>
-							<img src="images/about-me.jpg" alt="Self Full Image" />
+							<img src={aboutImage} alt="Self Full Image" />
 							<ImageBadge>
 								<div className="wrap positon-relative">
 									<svg
@@ -51,17 +52,17 @@ const About = () => {
 							</ImageBadge>
 						</ImageWrap>
 					</div>
-					<div className="col-md-6">
-						<Heading className="mb-3">I am a professional web developer from Dhaka.</Heading>
-						<Paragraph fontSize="1.1rem">
+					<div className="col-md-6 mt-4 mt-md-0 text-center text-md-start">
+						<Heading className="mb-3">I am a professional web developer from Dhaka, Bangladesh.</Heading>
+						<Paragraph>
 							I can help you create positive and permanent changes in your life. High Performance
 							Portfolio Template. Let’s Create Something new and awesome Togeather. I can help you create
 							positive and permanent changes in your life.
 						</Paragraph>
-						<Link href="files/CV.pdf" className="mt-4" download>
+						<Link href="files/CV.pdf" className="mt-3" primary download>
 							Download CV
 						</Link>
-						<div className="d-flex align-items-center mt-3">
+						<div className="d-flex align-items-center justify-content-center justify-content-md-start  mt-3">
 							{socialData.map((item, index) => (
 								<SocialIconLink key={index} href={item.link} target="_blank">
 									{icons.map(
